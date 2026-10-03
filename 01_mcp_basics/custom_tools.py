@@ -42,6 +42,27 @@ def format_greeting(name: str, title: str = "Developer") -> str:
     return f"Hello {title} {name}! Welcome to Model Context Protocol (MCP)."
 
 
+@mcp.tool()
+def get_live_weather(city: str) -> str:
+    """Fetch real-time weather information for any city using a live public API.
+    
+    Args:
+        city: Name of the city (e.g., 'Mumbai', 'London', 'New York')
+    """
+    import urllib.request
+    import urllib.parse
+
+    try:
+        encoded_city = urllib.parse.quote(city)
+        url = f"https://wttr.in/{encoded_city}?format=3"
+        req = urllib.request.Request(url, headers={"User-Agent": "curl/7.68.0"})
+        with urllib.request.urlopen(req, timeout=5) as response:
+            weather_text = response.read().decode("utf-8").strip()
+            return f"Live Report: {weather_text}"
+    except Exception as e:
+        return f"Could not fetch weather for {city}: {str(e)}"
+
+
 # ==========================================
 # 2. DEFINING RESOURCES (@mcp.resource)
 # ==========================================
