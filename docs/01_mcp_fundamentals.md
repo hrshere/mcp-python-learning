@@ -31,8 +31,8 @@ MCP supports two primary transport methods for client-server communication:
 
 ## 4. Learn, Re-learn & Unlearn Log
 
-> 💡 **Learned**: MCP decouples the tool implementation from the LLM framework. You write tool logic once in Python/FastMCP, and any host or client can use it.
+> 💡 **Learned**: MCP decouples the tool implementation from the LLM framework. You write tool logic once in Python, and any host or client can use it.
 >
-> 🔄 **Re-learned**: Python type hints (`int`, `str`, `dict`) and docstrings are not just for code quality—FastMCP uses them to automatically build JSON Schemas that the LLM understands!
+> 🔄 **Re-learned**: In Python `mcp` SDK v2.x, `FastMCP` was renamed to `MCPServer` (`from mcp.server.mcpserver import MCPServer`). Python type hints (`int`, `str`, `dict`) and docstrings are used to automatically build JSON Schemas that the LLM understands!
 >
 > ❌ **Unlearned**: LLMs do NOT execute code directly inside their neural network. They output structured text (JSON) requesting a tool execution, and our runtime/MCP server executes it and feeds the result back.

@@ -10,10 +10,10 @@ Key Concepts:
 - @mcp.prompt(): Provides reusable prompt templates to guide LLM interactions.
 """
 
-from mcp.server.fastmcp import FastMCP
+from mcp.server.mcpserver import MCPServer
 
-# Initialize MCP server
-mcp = FastMCP("AdvancedDemoServer")
+# Initialize MCP server (mcp 2.x uses MCPServer)
+mcp = MCPServer("AdvancedDemoServer")
 
 
 # ==========================================
