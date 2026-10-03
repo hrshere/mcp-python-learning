@@ -71,7 +71,7 @@ async def run_mcp_client():
                     types.FunctionDeclaration(
                         name=tool.name,
                         description=tool.description or "",
-                        parameters=tool.inputSchema
+                        parameters=tool.input_schema
                     )
                 )
 
@@ -82,7 +82,7 @@ async def run_mcp_client():
             print(f"  User Prompt: '{user_prompt}'")
 
             response = client.models.generate_content(
-                model="gemini-2.5-flash",
+                model="gemini-3.6-flash",
                 contents=user_prompt,
                 config=types.GenerateContentConfig(tools=gemini_tools)
             )
