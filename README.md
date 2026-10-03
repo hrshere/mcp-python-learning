@@ -16,9 +16,9 @@ flowchart LR
 
 | Stage | Module Name | Focus Areas | Status |
 | :--- | :--- | :--- | :---: |
-| **01** | [`01_mcp_basics`](./01_mcp_basics/) | FastMCP, custom tools, resources, prompts, stdio/SSE transports | 🔄 In Progress |
-| **02** | [`02_llm_tool_calling`](./02_llm_tool_calling/) | Binding MCP tools to LLMs, function calling schemas, execution loop | ⏳ Upcoming |
-| **03** | [`03_rag_pipeline`](./03_rag_pipeline/) | Chunking strategies, Vector embeddings, ChromaDB, Context Retrieval | ⏳ Upcoming |
+| **01** | [`01_mcp_basics`](./01_mcp_basics/) | FastMCP / MCPServer, custom tools, resources, prompts, stdio | ✅ Complete |
+| **02** | [`02_llm_tool_calling`](./02_llm_tool_calling/) | Binding MCP tools to Gemini LLM, function calling schemas, execution loop | ✅ Complete |
+| **03** | [`03_rag_pipeline`](./03_rag_pipeline/) | Chunking strategies, Vector embeddings, ChromaDB, Context Retrieval | 🔄 Next Up |
 | **04** | [`04_agentic_workflows`](./04_agentic_workflows/) | Agent loops, ReAct framework, multi-tool orchestration, memory state | ⏳ Upcoming |
 | **05** | [`05_django_integration`](./05_django_integration/) | Connecting Agentic workflows with Django REST APIs & web dashboards | ⏳ Upcoming |
 
