@@ -67,6 +67,7 @@ def get_live_weather(city: str) -> str:
 # 2. DEFINING RESOURCES (@mcp.resource)
 # ==========================================
 
+# A) Direct Static URI Resource
 @mcp.resource("config://app-settings")
 def get_app_settings() -> str:
     """Provides application configuration context to the LLM."""
@@ -77,6 +78,20 @@ def get_app_settings() -> str:
         "environment": "development",
         "supported_features": ["tools", "resources", "prompts"]
     }
+    """
+
+
+# B) Dynamic Resource Template (with path parameter)
+@mcp.resource("users://{user_id}/profile")
+def get_user_profile(user_id: str) -> str:
+    """Fetches user profile information dynamically based on user_id URI template."""
+    return f"""
+    {{
+        "user_id": "{user_id}",
+        "status": "active",
+        "role": "Learner",
+        "enrolled_courses": ["MCP 101", "RAG Mastery", "Agentic Frameworks"]
+    }}
     """
 
 
