@@ -31,8 +31,15 @@ MCP supports two primary transport methods for client-server communication:
 
 ## 4. Learn, Re-learn & Unlearn Log
 
-> 💡 **Learned**: MCP decouples the tool implementation from the LLM framework. You write tool logic once in Python, and any host or client can use it.
+> 💡 **Learned**: 
+> - **Decoupled Tools**: MCP decouples tool implementation from the LLM framework. You write tool logic once in Python, and any client (Claude Desktop, IDEs, custom apps) can consume it.
+> - **Resources (URIs vs Templates)**: Direct URIs (`config://app-settings`) provide static background context, while Resource Templates (`users://{user_id}/profile`) allow dynamic parameterized context.
+> - **Multi-Server Architecture**: An AI Client can aggregate tools, resources, and prompts from multiple specialized MCP servers simultaneously (e.g. Database Server + Slack Server + RAG Server).
 >
-> 🔄 **Re-learned**: In Python `mcp` SDK v2.x, `FastMCP` was renamed to `MCPServer` (`from mcp.server.mcpserver import MCPServer`). Python type hints (`int`, `str`, `dict`) and docstrings are used to automatically build JSON Schemas that the LLM understands!
+> 🔄 **Re-learned**: 
+> - **SDK v2.x Migration**: In Python `mcp` SDK 2.x, `FastMCP` was renamed to `MCPServer` (`from mcp.server.mcpserver import MCPServer`).
+> - **Type Hint Schemas**: Python type hints (`str`, `float`) and docstrings aren't just comments—MCPServer automatically turns them into JSON Schemas for the LLM!
+> - **Stdio Transport**: `mcp.run()` runs a continuous standard I/O loop expecting JSON-RPC messages from a host client, which is why running it manually hangs waiting for input.
 >
-> ❌ **Unlearned**: LLMs do NOT execute code directly inside their neural network. They output structured text (JSON) requesting a tool execution, and our runtime/MCP server executes it and feeds the result back.
+> ❌ **Unlearned**: 
+> - LLMs do NOT execute Python code directly inside their neural network. They emit structured JSON requests asking an MCP server to execute the tool and return the output.
