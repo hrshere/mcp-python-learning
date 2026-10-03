@@ -116,5 +116,8 @@ Code:
 
 if __name__ == "__main__":
     # Runs the server using standard input/output (stdio) transport
-    print("Starting AdvancedDemoServer...")
+    # Note: Do NOT print to stdout when running over stdio transport!
+    # stdout is reserved exclusively for JSON-RPC messages.
+    import sys
+    sys.stderr.write("Starting AdvancedDemoServer over stdio...\n")
     mcp.run()
