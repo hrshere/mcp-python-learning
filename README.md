@@ -18,7 +18,7 @@ flowchart LR
 | :--- | :--- | :--- | :---: |
 | **01** | [`01_mcp_basics`](./01_mcp_basics/) | FastMCP / MCPServer, custom tools, resources, prompts, stdio | ✅ Complete |
 | **02** | [`02_llm_tool_calling`](./02_llm_tool_calling/) | Binding MCP tools to Gemini LLM, function calling schemas, execution loop | ✅ Complete |
-| **03** | [`03_rag_pipeline`](./03_rag_pipeline/) | Chunking strategies, Vector embeddings, ChromaDB, Context Retrieval | 🔄 Next Up |
+| **03** | [`03_rag_pipeline`](./03_rag_pipeline/) | Document Chunking, Gemini Embeddings (`text-embedding-004`), Pinecone Vector DB, MCP RAG Tool | 🔄 In Progress |
 | **04** | [`04_agentic_workflows`](./04_agentic_workflows/) | Agent loops, ReAct framework, multi-tool orchestration, memory state | ⏳ Upcoming |
 | **05** | [`05_django_integration`](./05_django_integration/) | Connecting Agentic workflows with Django REST APIs & web dashboards | ⏳ Upcoming |
 
@@ -29,7 +29,7 @@ flowchart LR
 Keep track of mental models, key insights, architectural decisions, and things to **Learn, Re-learn, and Unlearn**:
 
 - [01 - MCP Fundamentals & Architecture](./docs/01_mcp_fundamentals.md)
-- [02 - LLM Function Calling vs MCP Tools](./docs/02_llm_tool_calling_notes.md) *(coming soon)*
+- [02 - LLM Function Calling vs MCP Tools](./docs/02_llm_tool_calling_notes.md)
 - [03 - Modern RAG & Context Engineering](./docs/03_rag_notes.md) *(coming soon)*
 - [04 - Autonomous Agent Design Patterns](./docs/04_agentic_patterns.md) *(coming soon)*
 
